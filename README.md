@@ -1,5 +1,7 @@
-# wifi-deauther
-**> Fully automatic wifi deauther (killer) coded in Python**
+# WiFi-Deauthentication-Attack-Simulation
+
+**> Fully automatic WiFi-Deauthentication-Attack-Simulation
+ coded in Python**
 
 **HOW TO INSTALL**
 
