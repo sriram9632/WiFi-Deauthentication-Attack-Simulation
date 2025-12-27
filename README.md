@@ -4,7 +4,7 @@
 **HOW TO INSTALL**
 
 ``` bash
-git clone https://github.com/ZKAW/wifi-deauther && cd wifi-deauther && chmod +x INSTALL && sudo ./INSTALL
+git clone https://github.com/sriram9632/wifi-deauther && cd wifi-deauther && chmod +x INSTALL && sudo ./INSTALL
 ```
 
 **HOW TO USE**
