@@ -6,7 +6,10 @@
 **HOW TO INSTALL**
 
 ``` bash
-git clone https://github.com/sriram9632/wifi-deauther && cd wifi-deauther && chmod +x INSTALL && sudo ./INSTALL
+git clone https://github.com/sriram9632/WiFi-Deauthentication-Attack-Simulation.git
+cd WiFi-Deauthentication-Attack-Simulation
+chmod +x INSTALL
+
 ```
 
 **HOW TO USE**
