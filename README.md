@@ -13,12 +13,10 @@ git clone https://github.com/sriram9632/wifi-deauther && cd wifi-deauther && chm
 
 * Execute the program with:
 ``` bash
-sudo python3 W-Killer.py 
+sudo python3 wifi_deauth_simulator.py
+
 ```
-or (if you added the script to path):
-``` bash
-sudo w-killer
-```
+
 * Select your wireless interface
 * Select the AP to deauth
 
