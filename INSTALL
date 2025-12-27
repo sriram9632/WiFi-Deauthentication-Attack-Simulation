@@ -1,0 +1,83 @@
+#!/usr/bin/env python3
+import os
+import shutil
+
+# Terminal colors set
+DEFAULT = '\033[39m'
+BLACK = '\033[30m' 
+RED = '\033[31m'
+GREEN = '\033[32m'
+ORANGE = '\033[93m'
+BLUE = '\033[34m' 
+MAGENTA = '\033[95m'
+CYAN = '\033[36m'
+
+LIGHTGRAY = '\033[37m'
+DARKGRAY = '\033[90m'
+LIGHTRED = '\033[91m'
+LIGHTGREEN = '\033[92m'
+LIGHTORANGE = '\033[33m'
+LIGHTBLUE = '\033[94m' 
+LIGHTCYAN = '\033[96m'
+LIGHTMAGENTA = '\033[35m'
+WHITE = '\033[97m'
+GRAY = '\033[30m'
+
+dir_path = os.getcwd()
+script_path = dir_path + "/W-Killer.py"
+
+def apt_install(package):
+    print(f" \n{LIGHTORANGE}* {LIGHTGRAY}Installing {CYAN}{package}{LIGHTGRAY}...\n")
+    os.system('sudo apt -y install '+package)
+    os.system('clear')
+def pip_install(package):
+    print(f" \n{LIGHTORANGE}* {LIGHTGRAY}Installing {CYAN}{package}{LIGHTGRAY}...\n")
+    os.system('pip3 install '+package)
+    os.system('clear')
+
+def is_root():
+    return os.geteuid() == 0
+
+os.system('clear')
+
+if not is_root():
+    print(f"\n{RED}* {LIGHTGRAY}This script must be run as {ORANGE}root{LIGHTGRAY}")
+    print(f"{RED}* {LIGHTGRAY}Please try again with {ORANGE}sudo{LIGHTGRAY}")
+    exit()
+
+try:
+    print(f"{LIGHTORANGE}Welcome")
+    print(f"      {ORANGE}To")
+    input(f"        {CYAN}W{LIGHTGRAY}-{LIGHTBLUE}Killer{LIGHTGRAY} {CYAN}installation{LIGHTGRAY}.\n\n"\
+          f"   {CYAN}-> {LIGHTGRAY}Press {GREEN}ENTER {LIGHTGRAY}to {GREEN}install {LIGHTGRAY}the required packages for {CYAN}W{LIGHTGRAY}-{LIGHTBLUE}Killer{LIGHTGRAY}.\n"\
+          f"   {CYAN}-> {LIGHTGRAY}Press {ORANGE}CTRL{LIGHTGRAY}+{ORANGE}C {LIGHTGRAY}to {ORANGE}abort{LIGHTGRAY}.")
+except KeyboardInterrupt:
+    os.system('clear')
+    print(f'{LIGHTORANGE}* {LIGHTGRAY}Installation {ORANGE}canceled by user.{LIGHTGRAY}.')
+    print(f'\n{LIGHTORANGE}Goodbye{LIGHTGRAY}.')
+    exit()
+os.system('clear')
+
+
+apt_install("aircrack-ng")
+apt_install("mdk4")
+
+pip_install('scapy')
+
+print(f"{CYAN}* {GREEN}Fixing {LIGHTGRAY}permissions...\n")
+os.system(f"chmod +x {script_path}")
+os.system('clear')
+
+try:
+    addPath = input(f'\n  {LIGHTGRAY}Add {CYAN}W{LIGHTGRAY}-{LIGHTBLUE}Killer{LIGHTGRAY} to /usr/local/bin\n  So you can access it from "{BLUE}w-killer{LIGHTGRAY}" cmd line ? ({GREEN}Y{LIGHTGRAY}/{LIGHTBLUE}n{LIGHTGRAY}) > {ORANGE}')
+except KeyboardInterrupt:
+    addPath = 'n'
+
+os.system('clear')
+if 'n' in addPath.lower():
+    print(f'\n {LIGHTORANGE}* {CYAN}W{LIGHTGRAY}-{LIGHTBLUE}Killer{LIGHTGRAY} has not {LIGHTGRAY}been added to /usr/local/bin')
+else:
+    shutil.copy2(script_path, '/usr/local/bin/w-killer')
+    print(f'\n {LIGHTGREEN}* {CYAN}W{LIGHTGRAY}-{LIGHTBLUE}Killer{LIGHTGRAY} has been added {LIGHTGRAY}to /usr/local/bin.\n'\
+          f'   You can now run the script by typing "{BLUE}sudo w-killer{LIGHTGRAY}" in the terminal.')
+print(f'\n{LIGHTORANGE}Goodbye{LIGHTGRAY}.')

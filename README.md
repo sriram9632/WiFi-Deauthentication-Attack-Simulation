@@ -1,33 +1,29 @@
-# WiFi Deauthentication Attack Simulation
+# wifi-deauther
+**> Fully automatic wifi deauther (killer) coded in Python**
 
-## Description
-This project demonstrates a controlled simulation of WiFi deauthentication attacks in a secure lab environment to understand wireless network vulnerabilities and defense mechanisms.The focus is on analyzing how deauthentication frames can disrupt communication between clients and access points in legacy WiFi networks.
+**HOW TO INSTALL**
 
-This project is strictly for educational and ethical purposes, emphasizing security awareness, attack detection, and mitigation strategies rather than real-world exploitation.
+``` bash
+git clone https://github.com/ZKAW/wifi-deauther && cd wifi-deauther && chmod +x INSTALL && sudo ./INSTALL
+```
 
-## Objectives
-- Understand WiFi authentication and deauthentication mechanisms
-- Analyze the impact of deauthentication attacks on wireless clients
-- Study vulnerabilities in unsecured or legacy WiFi protocols
-- Learn mitigation techniques and defensive measures
+**HOW TO USE**
 
-## Key Features
-- Simulation of WiFi deauthentication attacks in monitor mode
-- Observation of client–access point disconnection behavior
-- Analysis of network disruption and recovery patterns
-- Discussion of mitigation strategies such as WPA3 and MFP (802.11w)
-  
-## Tools & Technologies
-- Kali Linux
-- Aircrack-ng suite (Airmon-ng, Aireplay-ng)
-- IEEE 802.11 wireless standards
-- Linux command-line tools
-  
-## Learning Outcomes
-- Practical understanding of wireless security concepts
-- Exposure to ethical hacking methodologies
-- Awareness of legal and ethical boundaries in cybersecurity
-- Improved knowledge of WiFi defense mechanisms
- 
-## Disclaimer
-This project is intended solely for educational purposes. All experiments were conducted in a controlled lab environment on authorized networks. Any unauthorized use against real-world networks is illegal and strictly discouraged.
+* Execute the program with:
+``` bash
+sudo python3 W-Killer.py 
+```
+or (if you added the script to path):
+``` bash
+sudo w-killer
+```
+* Select your wireless interface
+* Select the AP to deauth
+
+That's it !
+
+**IMPORTANT NOTES**
+
+- This script is designed for **Linux** based operating systems. Using this script in another operating system may cause errors.
+- The use of two wireless cards is **highly recommended** to avoid errors and complications.
+- Your wireless card must have **monitor mode** available and enabled.
